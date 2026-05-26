@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Khwaish Singh | Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#0f0f1a;
+    color:white;
+    overflow-x:hidden;
+}
+
+/* Animated Background */
+
+.bg-animation{
+    position:fixed;
+    width:100%;
+    height:100%;
+    overflow:hidden;
+    z-index:-1;
+}
+
+.circle{
+    position:absolute;
+    border-radius:50%;
+    background:rgba(168,85,247,0.18);
+    animation:float 10s infinite linear;
+}
+
+.circle:nth-child(1){
+    width:200px;
+    height:200px;
+    left:10%;
+    top:20%;
+}
+
+.circle:nth-child(2){
+    width:300px;
+    height:300px;
+    right:5%;
+    top:40%;
+    animation-duration:15s;
+}
+
+.circle:nth-child(3){
+    width:150px;
+    height:150px;
+    left:50%;
+    bottom:10%;
+    animation-duration:12s;
+}
+
+@keyframes float{
+    0%{
+        transform:translateY(0px) rotate(0deg);
+    }
+    50%{
+        transform:translateY(-30px) rotate(180deg);
+    }
+    100%{
+        transform:translateY(0px) rotate(360deg);
+    }
+}
+
+/* Navbar */
+
+nav{
+    width:100%;
+    padding:18px 8%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background:rgba(15,15,26,0.85);
+    backdrop-filter:blur(10px);
+}
+
+.logo{
+    font-size:28px;
+    font-weight:700;
+    color:#c084fc;
+}
+
+nav ul{
+    display:flex;
+    gap:20px;
+    list-style:none;
+}
+
+nav ul li a{
+    color:white;
+    text-decoration:none;
+    transition:0.3s;
+    font-size:15px;
+}
+
+nav ul li a:hover{
+    color:#c084fc;
+}
+
+/* Hero Section */
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:20px;
+}
+
+.hero-content{
+    max-width:900px;
+}
+
+.hero h1{
+    font-size:65px;
+    margin-bottom:15px;
+    background:linear-gradient(to right,#d8b4fe,#a855f7);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+    animation:slideDown 1s ease;
+}
+
+.hero h2{
+    font-size:28px;
+    color:#d8b4fe;
+    margin-bottom:20px;
+    animation:fadeIn 2s ease;
+}
+
+.hero p{
+    font-size:18px;
+    line-height:1.8;
+    color:#ddd;
+    animation:fadeIn 3s ease;
+}
+
+.btn{
+    display:inline-block;
+    margin-top:30px;
+    padding:14px 35px;
+    border-radius:40px;
+    background:linear-gradient(to right,#9333ea,#c084fc);
+    color:white;
+    text-decoration:none;
+    font-weight:600;
+    transition:0.4s;
+    box-shadow:0 0 20px rgba(168,85,247,0.4);
+}
+
+.btn:hover{
+    transform:translateY(-5px) scale(1.05);
+}
+
+/* Sections */
+
+section{
+    padding:80px 8%;
+}
+
+.section-title{
+    text-align:center;
+    font-size:40px;
+    margin-bottom:50px;
+    color:#d8b4fe;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+.card{
+    background:rgba(255,255,255,0.05);
+    border:1px solid rgba(255,255,255,0.1);
+    padding:30px;
+    border-radius:25px;
+    transition:0.4s;
+    backdrop-filter:blur(12px);
+    animation:fadeUp 1s ease;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+    border-color:#c084fc;
+    box-shadow:0 0 25px rgba(168,85,247,0.4);
+}
+
+.card h3{
+    margin-bottom:15px;
+    color:#e9d5ff;
+    font-size:24px;
+}
+
+.card p{
+    color:#ddd;
+    line-height:1.7;
+}
+
+/* Dream Section */
+
+.dream{
+    text-align:center;
+    background:linear-gradient(135deg,#581c87,#7e22ce);
+    border-radius:30px;
+    margin:0 8% 80px;
+    padding:60px 25px;
+    box-shadow:0 0 40px rgba(168,85,247,0.3);
+}
+
+.dream h2{
+    font-size:42px;
+    margin-bottom:20px;
+}
+
+.dream p{
+    font-size:18px;
+    max-width:700px;
+    margin:auto;
+    line-height:1.8;
+}
+
+/* Footer */
+
+footer{
+    text-align:center;
+    padding:25px;
+    background:#140b1f;
+    color:#ccc;
+}
+
+/* Animations */
+
+@keyframes slideDown{
+    from{
+        opacity:0;
+        transform:translateY(-50px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@keyframes fadeIn{
+    from{
+        opacity:0;
+    }
+    to{
+        opacity:1;
+    }
+}
+
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* Mobile Responsive */
+
+@media(max-width:768px){
+
+    .hero h1{
+        font-size:42px;
+    }
+
+    .hero h2{
+        font-size:22px;
+    }
+
+    nav{
+        flex-direction:column;
+        gap:12px;
+    }
+
+    nav ul{
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+    .section-title{
+        font-size:32px;
+    }
+
+    .dream h2{
+        font-size:30px;
+    }
+
+}
+</style>
+</head>
+
+<body>
+
+<div class="bg-animation">
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+</div>
+
+<!-- Navbar -->
+
+<nav>
+    <div class="logo">Khwaish Singh</div>
+
+    <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#family">Family</a></li>
+        <li><a href="#favorites">Favorites</a></li>
+        <li><a href="#dream">Dream</a></li>
+    </ul>
+</nav>
+
+<!-- Hero -->
+
+<section class="hero">
+    <div class="hero-content">
+
+        <h1>Khwaish Singh</h1>
+
+        <h2>Class 6 Student ✨</h2>
+
+        <p>
+            Welcome to my modern animated portfolio website.
+            I am Khwaish Singh from Naini, Prayagraj.
+            I love reading books and learning new things every day.
+            My favourite colour is purple and my dream is to become a successful IAS Officer.
+        </p>
+
+        <a href="#about" class="btn">Explore More</a>
+
+    </div>
+</section>
+
+<!-- About -->
+
+<section id="about">
+
+    <h2 class="section-title">About Me</h2>
+
+    <div class="cards">
+
+        <div class="card">
+            <h3>📚 Education</h3>
+            <p>
+                I study in Class 6 and I enjoy learning new subjects,
+                reading books and improving my knowledge every day.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>📖 Hobby</h3>
+            <p>
+                My favourite hobby is reading books because books help me
+                learn new ideas and inspire me for the future.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>🏡 Location</h3>
+            <p>
+                I live in Naini, Prayagraj, a beautiful place filled
+                with culture and education.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- Family -->
+
+<section id="family">
+
+    <h2 class="section-title">My Family</h2>
+
+    <div class="cards">
+
+        <div class="card">
+            <h3>👨 Father</h3>
+            <p>
+                My father's name is Mr. Surendra Singh.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>👩 Mother</h3>
+            <p>
+                My mother's name is Mrs. Priti Singh.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- Favorites -->
+
+<section id="favorites">
+
+    <h2 class="section-title">My Favorites</h2>
+
+    <div class="cards">
+
+        <div class="card">
+            <h3>💜 Favourite Colour</h3>
+            <p>Purple</p>
+        </div>
+
+        <div class="card">
+            <h3>🥝 Favourite Fruit</h3>
+            <p>Kiwi</p>
+        </div>
+
+        <div class="card">
+            <h3>🪷 Favourite Flower</h3>
+            <p>Lotus</p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- Dream -->
+
+<section id="dream" class="dream">
+
+    <h2>🌟 My Dream</h2>
+
+    <p>
+        My biggest dream is to become an IAS Officer and serve my country
+        with honesty, intelligence and dedication. I want to help people,
+        improve society and make my parents proud.
+    </p>
+
+</section>
+
+<!-- Footer -->
+
+<footer>
+    © 2026 Khwaish Singh | Modern Portfolio Website
+</footer>
+
+</body>
+</html>
